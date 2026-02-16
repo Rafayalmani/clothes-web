@@ -1,0 +1,106 @@
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+/* Add to your global CSS file (e.g., index.css) */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 1040;
+}
+
+.popup-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1050;
+  max-width: 90%;
+  width: 400px;
+}
+
+/* Animation for the add to cart button */
+.btn-added {
+  background-color: #28a745 !important;
+  border-color: #28a745 !important;
+  color: white !important;
+}
+
+.btn-added i {
+  animation: spin 0.5s ease-in-out;
+}
+
+
+/* Add to src/index.css or global styles */
+.image-container {
+  position: relative;
+  background-color: #f8f9fa;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+}
+
+.image-container img {
+  transition: transform 0.3s ease;
+}
+
+.image-container:hover img {
+  transform: scale(1.05);
+}
+
+/* Category card image overlay */
+.card-img-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+}
+
+/* Product card image */
+.product-card-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

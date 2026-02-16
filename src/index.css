@@ -1,0 +1,42 @@
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Add to src/index.css or global styles */
+.image-container {
+  position: relative;
+  background-color: #f8f9fa;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+}
+
+.image-container img {
+  transition: transform 0.3s ease;
+}
+
+.image-container:hover img {
+  transform: scale(1.05);
+}
+
+/* Category card image overlay */
+.card-img-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+}
+
+/* Product card image */
+.product-card-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}

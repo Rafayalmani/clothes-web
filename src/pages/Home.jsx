@@ -1,0 +1,97 @@
+// src/pages/Home.jsx (Fully mobile responsive)
+import React from 'react';
+import { Link } from 'react-router-dom';
+import ProductCard from '../components/ProductCard';
+import products from '../data/products';
+
+const Home = () => {
+  const featuredProducts = products.slice(0, 4);
+
+  return (
+    <div>
+      {/* Hero Image - Mobile Responsive */}
+      <div style={{ 
+        width: '100%', 
+        height: 'auto',
+        maxHeight: '500px',
+        overflow: 'hidden'
+      }}>
+        <img 
+          src="/images/hero2.jpeg"  // Path from public folder
+          alt="Women Fashion Collection"
+          style={{ 
+            width: '100%', 
+            height: '100%', 
+            objectFit: 'cover',
+            objectPosition: 'center'
+          }}
+        />
+      </div>
+
+      {/* Featured Products - Mobile Responsive */}
+      <div className="container py-4 py-md-5">
+        <h2 className="text-center mb-3 mb-md-5">Featured Products</h2>
+        
+        {/* Responsive Grid */}
+        <div className="row g-3 g-md-4">
+          {featuredProducts.map(product => (
+            <div 
+              key={product.id} 
+              className="col-6 col-md-4 col-lg-3"
+            >
+              <ProductCard product={product} />
+            </div>
+          ))}
+        </div>
+
+        {/* View All Button - Mobile Responsive */}
+        <div className="text-center mt-4 mt-md-5">
+          <Link 
+            to="/shop" 
+            className="btn btn-outline-dark btn-sm btn-md-lg"
+            style={{
+              padding: '0.5rem 1.5rem',
+              fontSize: '0.9rem'
+            }}
+          >
+            View All Products
+          </Link>
+        </div>
+      </div>
+
+      {/* Optional: Add some spacing at bottom for mobile */}
+      <style jsx>{`
+        @media (max-width: 576px) {
+          .container {
+            padding-left: 15px;
+            padding-right: 15px;
+          }
+          
+          h2 {
+            font-size: 1.5rem;
+          }
+          
+          .btn-outline-dark {
+            width: 100%;
+            max-width: 250px;
+          }
+        }
+
+        @media (min-width: 577px) and (max-width: 768px) {
+          h2 {
+            font-size: 2rem;
+          }
+        }
+
+        @media (min-width: 769px) {
+          .btn-md-lg {
+            padding: 0.75rem 2rem !important;
+            font-size: 1rem !important;
+          }
+        }
+      `}</style>
+    </div>
+  );
+};
+
+export default Home;
